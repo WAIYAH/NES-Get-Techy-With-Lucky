@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Team Page — Solution</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      padding: 3rem 1rem;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      flex: 1 1 250px;
+      max-width: 300px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-image {
+      width: 100%;
+      height: 200px;
+      background: #bdc3c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h3 { margin-bottom: 0.25rem; }
+    .card .role {
+      color: #3498db;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+    .card .bio {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #666;
+      flex: 1;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-col {
+      flex: 1 1 200px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 0.75rem;
+      color: #3498db;
+    }
+
+    .footer-col p,
+    .footer-col li {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col a {
+      color: #ecf0f1;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Meet the Team</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="card-image">👩‍💻</div>
+      <div class="card-content">
+        <h3>Alice Kamau</h3>
+        <p class="role">Lead Developer</p>
+        <p class="bio">Full-stack developer with 5 years of experience in React and Node.js. Passionate about clean code and mentoring juniors.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">👨‍🎨</div>
+      <div class="card-content">
+        <h3>Brian Odhiambo</h3>
+        <p class="role">UI/UX Designer</p>
+        <p class="bio">Creates beautiful, user-centred designs. Specialises in design systems and accessibility.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">👩‍🔬</div>
+      <div class="card-content">
+        <h3>Catherine Njeri</h3>
+        <p class="role">Data Analyst</p>
+        <p class="bio">Turns data into insights using Python and SQL. Loves visualising complex data in simple, meaningful ways.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">👨‍💼</div>
+      <div class="card-content">
+        <h3>Daniel Kipchoge</h3>
+        <p class="role">Project Manager</p>
+        <p class="bio">Keeps the team on track with agile methodologies. Expert at turning chaos into organised sprints.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>We're a passionate team dedicated to building great software and teaching others to do the same.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Email: team@example.com</p>
+      <p>Phone: +254 700 000 000</p>
+      <p>Location: Nairobi, Kenya</p>
+    </div>
+  </footer>
+
+</body>
+</html>

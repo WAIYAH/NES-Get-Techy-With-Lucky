@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Style Guide — Solution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #2ecc71;
+      --accent: #e74c3c;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--white);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.5rem; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .swatch {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .swatch-primary { background-color: var(--primary); }
+    .swatch-secondary { background-color: var(--secondary); }
+    .swatch-accent { background-color: var(--accent); }
+    .swatch-dark { background-color: var(--dark); }
+    .swatch-light { background-color: var(--light); color: var(--dark); }
+
+    .type-samples { margin-top: 1rem; }
+    .type-samples p { margin-bottom: 0.5rem; }
+    .weight-bold { font-weight: 700; }
+    .style-italic { font-style: italic; }
+    .transform-upper { text-transform: uppercase; letter-spacing: 2px; }
+    .spacing-wide { letter-spacing: 3px; }
+    .code-sample {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background-color: var(--dark);
+      color: var(--secondary);
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+
+    .gradients {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .gradient-box {
+      width: 250px;
+      height: 120px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .grad-1 { background: linear-gradient(135deg, #3498db, #2ecc71); }
+    .grad-2 { background: linear-gradient(to right, #e74c3c, #f39c12); }
+    .grad-3 { background: radial-gradient(circle, #9b59b6, #2c3e50); }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Brand Style Guide</h1>
+    <p>Typography, colours, and design tokens for our project</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Colour Palette</h2>
+      <div class="swatches">
+        <div class="swatch swatch-primary">#3498db</div>
+        <div class="swatch swatch-secondary">#2ecc71</div>
+        <div class="swatch swatch-accent">#e74c3c</div>
+        <div class="swatch swatch-dark">#2c3e50</div>
+        <div class="swatch swatch-light">#ecf0f1</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typography</h2>
+      <div class="type-samples">
+        <h1>Heading 1 — Poppins Bold (2.5rem)</h1>
+        <h2>Heading 2 — Poppins Semi-Bold (2rem)</h2>
+        <h3>Heading 3 — Poppins Regular (1.5rem)</h3>
+        <p>Body text — Inter Regular (1rem / 16px). This is how most content looks across the site.</p>
+        <p class="weight-bold">Bold text — Inter Bold (700 weight)</p>
+        <p class="style-italic">Italic text — Inter Italic for emphasis</p>
+        <p class="transform-upper">Uppercase with letter spacing</p>
+        <p class="spacing-wide">Wide letter spacing for stylistic effect</p>
+        <div class="code-sample">const greeting = "Hello, World!";<br>console.log(greeting);</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Gradients</h2>
+      <div class="gradients">
+        <div class="gradient-box grad-1">Primary → Secondary</div>
+        <div class="gradient-box grad-2">Accent → Warning</div>
+        <div class="gradient-box grad-3">Purple → Dark (Radial)</div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- 
+  Module 01, Day 01 — Exercise: Organise a Messy Folder Structure
+  
+  TASK: On your computer, create the following folder structure.
+  Use File Explorer (Windows) or Finder (Mac).
+  
+  GetTechyWithLucky/
+  ├── Module-01/
+  │   ├── notes/
+  │   │   └── day-01-notes.txt     ← Write 3 things you learned today
+  │   └── exercises/
+  ├── Module-02/
+  └── projects/
+  
+  Then create a text file inside "notes" called "day-01-notes.txt"
+  and write 3 things you learned today.
+  
+  BONUS: Also create the FreelanceBusiness folder structure from the Challenge section.
+-->
+
+This exercise is completed on your own computer's file system.
+See the README.md for full instructions.

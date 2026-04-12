@@ -1,0 +1,250 @@
+/* ===========================================
+   GRAFINEX — Custom Styles
+   Portfolio Two: Graphic Designer
+   =========================================== */
+
+/* ----- CSS Custom Properties (Brand Tokens) ----- */
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #111111;
+  --color-surface: #1a1a1a;
+  --color-accent: #a855f7;        /* electric purple */
+  --color-accent-alt: #ff6b6b;    /* neon coral */
+  --color-text: #e4e4e7;
+  --color-text-muted: #a1a1aa;
+  --color-white: #ffffff;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --transition-base: 0.3s ease;
+}
+
+/* ----- Global Resets & Base ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* ----- Animated Gradient Background for Hero ----- */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a0a2e 25%,
+    #0a0a0a 50%,
+    #1a0020 75%,
+    #0a0a0a 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ----- Floating Particles (CSS-only) ----- */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float linear infinite;
+}
+
+.particle:nth-child(1)  { left: 10%; animation-duration: 8s;  animation-delay: 0s;   top: 20%; }
+.particle:nth-child(2)  { left: 25%; animation-duration: 12s; animation-delay: 1s;   top: 60%; }
+.particle:nth-child(3)  { left: 40%; animation-duration: 10s; animation-delay: 2s;   top: 40%; }
+.particle:nth-child(4)  { left: 55%; animation-duration: 14s; animation-delay: 0.5s; top: 80%; }
+.particle:nth-child(5)  { left: 70%; animation-duration: 9s;  animation-delay: 3s;   top: 30%; }
+.particle:nth-child(6)  { left: 85%; animation-duration: 11s; animation-delay: 1.5s; top: 70%; }
+.particle:nth-child(7)  { left: 15%; animation-duration: 13s; animation-delay: 2.5s; top: 50%; }
+.particle:nth-child(8)  { left: 60%; animation-duration: 7s;  animation-delay: 4s;   top: 15%; }
+.particle:nth-child(9)  { left: 90%; animation-duration: 15s; animation-delay: 0.8s; top: 90%; }
+.particle:nth-child(10) { left: 35%; animation-duration: 10s; animation-delay: 3.5s; top: 75%; }
+
+@keyframes float {
+  0%   { transform: translateY(0) scale(1);   opacity: 0; }
+  10%  { opacity: 0.4; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+/* ----- Text Reveal Animation ----- */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealUp 0.8s ease forwards;
+}
+
+.text-reveal-delay {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealUp 0.8s ease 0.4s forwards;
+}
+
+.text-reveal-delay-2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealUp 0.8s ease 0.8s forwards;
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Scroll-Triggered Fade In ----- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Skill Progress Bars ----- */
+.skill-bar-fill {
+  width: 0;
+  transition: width 1.2s ease;
+}
+
+/* ----- Service Card Hover ----- */
+.service-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.15);
+  border-color: var(--color-accent);
+}
+
+/* ----- Portfolio Card Overlay ----- */
+.portfolio-card .card-overlay {
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.portfolio-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* ----- Portfolio Filter Active State ----- */
+.filter-btn.active {
+  background-color: var(--color-accent) !important;
+  color: var(--color-white) !important;
+}
+
+/* ----- Testimonial Carousel ----- */
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* ----- Back-to-Top Button ----- */
+.back-to-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+}
+
+/* ----- Floating Badge Pulse ----- */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+  50%      { box-shadow: 0 0 0 12px rgba(168, 85, 247, 0); }
+}
+
+.badge-pulse {
+  animation: pulse 2s ease infinite;
+}
+
+/* ----- Mobile Nav Overlay ----- */
+.mobile-nav {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+/* ----- Form Validation Error ----- */
+.field-error {
+  border-color: #ef4444 !important;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* ----- Active Nav Link ----- */
+.nav-link.active-link {
+  color: var(--color-accent) !important;
+}
+
+/* ----- Stat Counter ----- */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----- Custom Scrollbar ----- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}
+
+/* ----- Selection Color ----- */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-white);
+}

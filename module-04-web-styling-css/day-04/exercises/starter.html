@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; }
+
+    /* TASK 1: Create the overall dashboard layout using grid-template-areas:
+       - "sidebar header" (top row: sidebar + header)
+       - "sidebar main"   (bottom row: sidebar + main content)
+       - sidebar: 250px wide, header: 60px tall
+    */
+
+    /* TASK 2: Style the sidebar
+       - Background colour, padding, full height
+       - Add a nav list with links
+    */
+
+    /* TASK 3: Style the header bar
+       - Flex layout for a title on the left and user avatar on the right
+    */
+
+    /* TASK 4: Create the main content area
+       - Inside the main area, use a NESTED grid for cards:
+         repeat(auto-fit, minmax(250px, 1fr))
+    */
+
+    /* TASK 5: Style individual cards
+       - Background, border-radius, padding, box-shadow
+       - Make the featured card span 2 columns: grid-column: span 2
+    */
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <header class="topbar">
+      <h1>Overview</h1>
+      <span>👤 Lucky</span>
+    </header>
+
+    <main class="content">
+      <!-- Create a card grid here -->
+      <!-- Make the first card "featured" (spans 2 columns) -->
+      <!-- Add 5 more regular cards -->
+    </main>
+  </div>
+
+</body>
+</html>

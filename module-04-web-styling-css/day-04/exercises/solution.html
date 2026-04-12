@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Dashboard — Solution</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 60px 1fr;
+      grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 1.5rem;
+    }
+
+    .sidebar h2 {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #3498db;
+    }
+
+    .sidebar nav ul {
+      list-style: none;
+    }
+
+    .sidebar nav li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar nav a {
+      color: #bdc3c7;
+      text-decoration: none;
+      display: block;
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .sidebar nav a:hover {
+      background: #34495e;
+      color: white;
+    }
+
+    .topbar {
+      grid-area: header;
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .topbar h1 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .content {
+      grid-area: main;
+      background: #f0f2f5;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      align-content: start;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 0.9rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .card .change {
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+    }
+
+    .change.up { color: #2ecc71; }
+    .change.down { color: #e74c3c; }
+
+    .card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      color: white;
+    }
+
+    .card.featured h3 { color: rgba(255,255,255,0.8); }
+    .card.featured .value { color: white; }
+    .card.featured .change { color: rgba(255,255,255,0.9); }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>📊 Dashboard</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <header class="topbar">
+      <h1>Overview</h1>
+      <span>👤 Lucky</span>
+    </header>
+
+    <main class="content">
+      <div class="card featured">
+        <h3>Total Revenue</h3>
+        <div class="value">KES 1,245,000</div>
+        <div class="change up">↑ 12% from last month</div>
+      </div>
+
+      <div class="card">
+        <h3>Active Users</h3>
+        <div class="value">3,842</div>
+        <div class="change up">↑ 8% from last week</div>
+      </div>
+
+      <div class="card">
+        <h3>New Signups</h3>
+        <div class="value">284</div>
+        <div class="change up">↑ 15% from last week</div>
+      </div>
+
+      <div class="card">
+        <h3>Bounce Rate</h3>
+        <div class="value">34.2%</div>
+        <div class="change down">↓ 3% from last month</div>
+      </div>
+
+      <div class="card">
+        <h3>Avg Session Time</h3>
+        <div class="value">4m 32s</div>
+        <div class="change up">↑ 22s from last week</div>
+      </div>
+
+      <div class="card">
+        <h3>Support Tickets</h3>
+        <div class="value">18</div>
+        <div class="change down">↑ 3 new today</div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

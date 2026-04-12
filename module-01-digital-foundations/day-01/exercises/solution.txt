@@ -1,0 +1,40 @@
+<!-- 
+  Module 01, Day 01 — Solution
+  
+  The expected folder structure you should have created:
+  
+  GetTechyWithLucky/
+  ├── Module-01/
+  │   ├── notes/
+  │   │   └── day-01-notes.txt
+  │   └── exercises/
+  ├── Module-02/
+  └── projects/
+  
+  Inside day-01-notes.txt, you should have 3 things you learned, for example:
+  
+  1. A computer takes input, processes it, and produces output.
+  2. The CPU is the "brain" of the computer, and RAM is short-term memory.
+  3. File extensions like .html tell the computer what type of file it is.
+  
+  BONUS — FreelanceBusiness structure:
+  
+  FreelanceBusiness/
+  ├── Clients/
+  │   ├── Client-A/
+  │   │   ├── contracts/
+  │   │   ├── deliverables/
+  │   │   └── invoices/
+  │   └── Client-B/
+  │       ├── contracts/
+  │       ├── deliverables/
+  │       └── invoices/
+  ├── Templates/
+  ├── Portfolio/
+  └── Finances/
+      ├── income/
+      └── expenses/
+-->
+
+This exercise is completed on your own computer's file system.
+Check the folder structure matches the one described above.

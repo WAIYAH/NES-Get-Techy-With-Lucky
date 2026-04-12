@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GRAFINEX — Graphic Designer & Visual Storyteller. Bold, creative portfolio showcasing brand identity, UI/UX, motion graphics, and more." />
+  <title>GRAFINEX — Graphic Designer</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#0a0a0a',
+              surface: '#1a1a1a',
+              accent: '#a855f7',
+              coral: '#ff6b6b',
+              text: '#e4e4e7',
+              muted: '#a1a1aa',
+            }
+          },
+          fontFamily: {
+            heading: ['Inter', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts — Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-brand-bg text-brand-text font-body antialiased">
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-brand-bg/80 backdrop-blur-md border-b border-zinc-800/50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#hero" class="text-2xl font-extrabold tracking-tight text-white">
+        GRAFI<span class="text-brand-accent">NEX</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#about" class="nav-link text-brand-muted hover:text-brand-accent transition-colors">About</a></li>
+        <li><a href="#services" class="nav-link text-brand-muted hover:text-brand-accent transition-colors">Services</a></li>
+        <li><a href="#portfolio" class="nav-link text-brand-muted hover:text-brand-accent transition-colors">Work</a></li>
+        <li><a href="#testimonials" class="nav-link text-brand-muted hover:text-brand-accent transition-colors">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link text-brand-muted hover:text-brand-accent transition-colors">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button (Desktop) -->
+      <a href="#contact" class="hidden md:inline-block bg-brand-accent hover:bg-purple-600 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors">
+        Hire Me
+      </a>
+
+      <!-- Hamburger (Mobile) -->
+      <button id="hamburger" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/60 z-40"></div>
+
+    <!-- Mobile Nav Panel -->
+    <div id="mobile-nav" class="mobile-nav fixed top-0 right-0 w-64 h-full bg-brand-bg border-l border-zinc-800 z-50 flex flex-col pt-20 px-6 gap-6">
+      <a href="#about" class="text-lg text-brand-text hover:text-brand-accent transition-colors">About</a>
+      <a href="#services" class="text-lg text-brand-text hover:text-brand-accent transition-colors">Services</a>
+      <a href="#portfolio" class="text-lg text-brand-text hover:text-brand-accent transition-colors">Work</a>
+      <a href="#testimonials" class="text-lg text-brand-text hover:text-brand-accent transition-colors">Testimonials</a>
+      <a href="#contact" class="text-lg text-brand-text hover:text-brand-accent transition-colors">Contact</a>
+      <a href="#contact" class="mt-4 bg-brand-accent text-white text-center py-3 rounded-full font-semibold">Hire Me</a>
+    </div>
+  </header>
+
+  <!-- ============================================
+       1. HERO SECTION
+       ============================================ -->
+  <section id="hero" class="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- CSS Particles -->
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4">
+      <!-- Floating Badge -->
+      <div class="text-reveal inline-flex items-center gap-2 bg-brand-surface border border-zinc-700 rounded-full px-4 py-2 mb-8 badge-pulse">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        <span class="text-sm text-brand-muted">Available for freelance</span>
+      </div>
+
+      <h1 class="text-reveal text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
+        Hi, I'm <span class="text-brand-accent">GRAFINEX</span>
+      </h1>
+      <p class="text-reveal-delay text-lg sm:text-xl lg:text-2xl text-brand-muted mt-4 max-w-2xl mx-auto">
+        Graphic Designer &amp; Visual Storyteller
+      </p>
+      <p class="text-reveal-delay-2 text-sm sm:text-base text-zinc-500 mt-2 italic">
+        "Designing the impossible. Delivering the unforgettable."
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="text-reveal-delay-2 flex flex-wrap gap-4 justify-center mt-10">
+        <a href="#portfolio" class="bg-brand-accent hover:bg-purple-600 text-white font-semibold px-8 py-3 rounded-full transition-colors">
+          View My Work
+        </a>
+        <a href="#contact" class="border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white font-semibold px-8 py-3 rounded-full transition-colors">
+          Hire Me
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-brand-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================
+       2. ABOUT SECTION
+       ============================================ -->
+  <section id="about" class="py-20 lg:py-28 bg-brand-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Image / Visual -->
+        <div class="relative">
+          <div class="aspect-square rounded-2xl bg-gradient-to-br from-brand-accent/20 to-brand-coral/20 border border-zinc-800 flex items-center justify-center overflow-hidden">
+            <!-- Placeholder — uses KCAU AJIRA CLUB.jpg if present -->
+            <img
+              src="../KCAU AJIRA CLUB.jpg"
+              alt="GRAFINEX — Graphic Designer portrait"
+              class="w-full h-full object-cover rounded-2xl opacity-80"
+              onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden'); this.nextElementSibling.classList.add('flex');"
+            />
+            <div class="hidden w-full h-full items-center justify-center flex-col gap-4">
+              <svg class="w-24 h-24 text-brand-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+              <span class="text-brand-muted text-sm">Profile Image</span>
+            </div>
+          </div>
+          <!-- Decorative accent -->
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-accent/10 rounded-full blur-2xl"></div>
+        </div>
+
+        <!-- Bio & Skills -->
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+            About <span class="text-brand-accent">Me</span>
+          </h2>
+          <p class="text-brand-muted leading-relaxed mb-6">
+            I'm a passionate graphic designer with over 5 years of experience turning bold ideas into visual reality. From crafting iconic brand identities for startups to designing immersive digital experiences for global agencies, I bring a relentless eye for detail and a love of pushing creative boundaries. My design philosophy is simple: every pixel should tell a story, every color should evoke emotion, and every layout should guide the viewer on an unforgettable journey.
+          </p>
+          <p class="text-brand-muted leading-relaxed mb-8">
+            When I'm not designing, you'll find me exploring street art, experimenting with generative visuals, or mentoring aspiring designers in the community. Let's build something extraordinary.
+          </p>
+
+          <!-- Skills -->
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Brand Identity</span><span>95%</span></div>
+              <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-brand-accent rounded-full" data-width="95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>UI/UX Design</span><span>90%</span></div>
+              <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-brand-accent rounded-full" data-width="90%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Motion Graphics</span><span>85%</span></div>
+              <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-brand-accent rounded-full" data-width="85%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Print Design</span><span>88%</span></div>
+              <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-brand-accent rounded-full" data-width="88%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Typography</span><span>92%</span></div>
+              <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-brand-accent rounded-full" data-width="92%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1"><span>Illustration</span><span>80%</span></div>
+              <div class="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                <div class="skill-bar-fill h-full bg-brand-accent rounded-full" data-width="80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div id="stats" class="fade-in-section grid grid-cols-3 gap-6 mt-16 text-center">
+        <div class="bg-brand-surface border border-zinc-800 rounded-2xl py-8 px-4">
+          <div class="stat-number text-4xl font-black text-brand-accent" data-target="5" data-suffix="+">0</div>
+          <p class="text-brand-muted text-sm mt-2">Years Experience</p>
+        </div>
+        <div class="bg-brand-surface border border-zinc-800 rounded-2xl py-8 px-4">
+          <div class="stat-number text-4xl font-black text-brand-accent" data-target="120" data-suffix="+">0</div>
+          <p class="text-brand-muted text-sm mt-2">Projects Completed</p>
+        </div>
+        <div class="bg-brand-surface border border-zinc-800 rounded-2xl py-8 px-4">
+          <div class="stat-number text-4xl font-black text-brand-accent" data-target="40" data-suffix="+">0</div>
+          <p class="text-brand-muted text-sm mt-2">Happy Clients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. SERVICES SECTION
+       ============================================ -->
+  <section id="services" class="py-20 lg:py-28 bg-brand-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+          What I <span class="text-brand-accent">Do</span>
+        </h2>
+        <p class="text-brand-muted mt-3 max-w-xl mx-auto">
+          I offer a full spectrum of creative services to elevate your brand, engage your audience, and leave a lasting impression.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <article class="fade-in-section service-card bg-brand-surface rounded-2xl p-8 border border-zinc-800">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Brand Identity &amp; Logo Design</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">
+            Crafting memorable logos, color palettes, and visual systems that define who you are and set you apart in a crowded market.
+          </p>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="fade-in-section service-card bg-brand-surface rounded-2xl p-8 border border-zinc-800">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Social Media Graphics</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">
+            Scroll-stopping visuals for Instagram, LinkedIn, Twitter and beyond — designed to boost engagement and amplify your voice.
+          </p>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="fade-in-section service-card bg-brand-surface rounded-2xl p-8 border border-zinc-800">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">UI/UX Design &amp; Prototyping</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">
+            User-centered interfaces that look stunning and feel intuitive — from wireframes to pixel-perfect prototypes.
+          </p>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="fade-in-section service-card bg-brand-surface rounded-2xl p-8 border border-zinc-800">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Print &amp; Publication Design</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">
+            Magazine layouts, brochures, posters, and packaging that command attention on the shelf and in hand.
+          </p>
+        </article>
+
+        <!-- Service 5 -->
+        <article class="fade-in-section service-card bg-brand-surface rounded-2xl p-8 border border-zinc-800">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Motion Graphics &amp; Animation</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">
+            Dynamic motion pieces, animated logos, and explainer videos that bring your brand story to life.
+          </p>
+        </article>
+
+        <!-- Service 6 -->
+        <article class="fade-in-section service-card bg-brand-surface rounded-2xl p-8 border border-zinc-800">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Illustration &amp; Concept Art</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">
+            Custom illustrations, character design, and concept art that gives your project a unique visual language.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. PORTFOLIO / WORK SECTION
+       ============================================ -->
+  <section id="portfolio" class="py-20 lg:py-28 bg-brand-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+          Selected <span class="text-brand-accent">Work</span>
+        </h2>
+        <p class="text-brand-muted mt-3 max-w-xl mx-auto">
+          A curated selection of projects that showcase my range of skills and creative approach.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="fade-in-section flex flex-wrap justify-center gap-3 mb-10">
+        <button class="filter-btn active bg-brand-accent text-white px-5 py-2 rounded-full text-sm font-medium transition-colors" data-filter="all">All</button>
+        <button class="filter-btn bg-brand-surface text-brand-muted border border-zinc-700 px-5 py-2 rounded-full text-sm font-medium hover:border-brand-accent hover:text-white transition-colors" data-filter="branding">Branding</button>
+        <button class="filter-btn bg-brand-surface text-brand-muted border border-zinc-700 px-5 py-2 rounded-full text-sm font-medium hover:border-brand-accent hover:text-white transition-colors" data-filter="uiux">UI/UX</button>
+        <button class="filter-btn bg-brand-surface text-brand-muted border border-zinc-700 px-5 py-2 rounded-full text-sm font-medium hover:border-brand-accent hover:text-white transition-colors" data-filter="print">Print</button>
+        <button class="filter-btn bg-brand-surface text-brand-muted border border-zinc-700 px-5 py-2 rounded-full text-sm font-medium hover:border-brand-accent hover:text-white transition-colors" data-filter="motion">Motion</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Project 1 — Luminary -->
+        <div class="portfolio-card fade-in-section relative group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300" data-category="branding">
+          <div class="aspect-[4/3] bg-gradient-to-br from-purple-900 to-purple-600 flex items-center justify-center">
+            <span class="text-5xl">✦</span>
+          </div>
+          <div class="card-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+            <h3 class="text-white text-lg font-bold">Luminary — Brand Identity</h3>
+            <span class="text-brand-accent text-xs uppercase tracking-widest">Branding</span>
+            <button class="mt-2 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white px-5 py-2 rounded-full text-sm transition-colors">
+              View Project
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 — Pulse App UI -->
+        <div class="portfolio-card fade-in-section relative group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300" data-category="uiux">
+          <div class="aspect-[4/3] bg-gradient-to-br from-blue-900 to-cyan-600 flex items-center justify-center">
+            <span class="text-5xl">◉</span>
+          </div>
+          <div class="card-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+            <h3 class="text-white text-lg font-bold">Pulse App UI</h3>
+            <span class="text-brand-accent text-xs uppercase tracking-widest">UI/UX</span>
+            <button class="mt-2 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white px-5 py-2 rounded-full text-sm transition-colors">
+              View Project
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 — Nova Magazine Cover -->
+        <div class="portfolio-card fade-in-section relative group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300" data-category="print">
+          <div class="aspect-[4/3] bg-gradient-to-br from-rose-900 to-orange-600 flex items-center justify-center">
+            <span class="text-5xl">▲</span>
+          </div>
+          <div class="card-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+            <h3 class="text-white text-lg font-bold">Nova Magazine Cover</h3>
+            <span class="text-brand-accent text-xs uppercase tracking-widest">Print</span>
+            <button class="mt-2 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white px-5 py-2 rounded-full text-sm transition-colors">
+              View Project
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4 — Orbit Motion Reel -->
+        <div class="portfolio-card fade-in-section relative group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300" data-category="motion">
+          <div class="aspect-[4/3] bg-gradient-to-br from-emerald-900 to-teal-500 flex items-center justify-center">
+            <span class="text-5xl">◈</span>
+          </div>
+          <div class="card-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+            <h3 class="text-white text-lg font-bold">Orbit Motion Reel</h3>
+            <span class="text-brand-accent text-xs uppercase tracking-widest">Motion</span>
+            <button class="mt-2 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white px-5 py-2 rounded-full text-sm transition-colors">
+              View Project
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5 — Zenith Logo Suite -->
+        <div class="portfolio-card fade-in-section relative group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300" data-category="branding">
+          <div class="aspect-[4/3] bg-gradient-to-br from-amber-900 to-yellow-500 flex items-center justify-center">
+            <span class="text-5xl">⬡</span>
+          </div>
+          <div class="card-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+            <h3 class="text-white text-lg font-bold">Zenith Logo Suite</h3>
+            <span class="text-brand-accent text-xs uppercase tracking-widest">Branding</span>
+            <button class="mt-2 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white px-5 py-2 rounded-full text-sm transition-colors">
+              View Project
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6 — Bloom Social Kit -->
+        <div class="portfolio-card fade-in-section relative group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300" data-category="uiux">
+          <div class="aspect-[4/3] bg-gradient-to-br from-pink-900 to-fuchsia-500 flex items-center justify-center">
+            <span class="text-5xl">❋</span>
+          </div>
+          <div class="card-overlay absolute inset-0 bg-black/70 flex flex-col items-center justify-center gap-3">
+            <h3 class="text-white text-lg font-bold">Bloom Social Kit</h3>
+            <span class="text-brand-accent text-xs uppercase tracking-widest">UI/UX</span>
+            <button class="mt-2 border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white px-5 py-2 rounded-full text-sm transition-colors">
+              View Project
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. TESTIMONIALS SECTION
+       ============================================ -->
+  <section id="testimonials" class="py-20 lg:py-28 bg-brand-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+          Client <span class="text-brand-accent">Testimonials</span>
+        </h2>
+        <p class="text-brand-muted mt-3">What people say about working with me.</p>
+      </div>
+
+      <!-- Carousel -->
+      <div id="testimonial-carousel" class="fade-in-section overflow-hidden rounded-2xl">
+        <div id="testimonial-track" class="testimonial-track">
+
+          <!-- Testimonial 1 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <blockquote class="bg-brand-surface border border-zinc-800 rounded-2xl p-8 sm:p-10 text-center">
+              <svg class="w-10 h-10 text-brand-accent mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+              </svg>
+              <p class="text-brand-text text-lg leading-relaxed mb-6">
+                "GRAFINEX completely transformed our brand. The logo, the color system, the guidelines — everything was pixel-perfect and delivered ahead of schedule. Our rebrand generated a 40% increase in engagement within the first month."
+              </p>
+              <div>
+                <p class="text-white font-bold">Sarah Okonkwo</p>
+                <p class="text-brand-muted text-sm">Marketing Director, Luminary Studios</p>
+              </div>
+            </blockquote>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <blockquote class="bg-brand-surface border border-zinc-800 rounded-2xl p-8 sm:p-10 text-center">
+              <svg class="w-10 h-10 text-brand-accent mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+              </svg>
+              <p class="text-brand-text text-lg leading-relaxed mb-6">
+                "Working with GRAFINEX was an absolute pleasure. They took our vague concept and turned it into a polished, professional app interface that our users love. Highly creative, incredibly responsive, and a true professional."
+              </p>
+              <div>
+                <p class="text-white font-bold">James Mwangi</p>
+                <p class="text-brand-muted text-sm">CEO, Pulse Technologies</p>
+              </div>
+            </blockquote>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <blockquote class="bg-brand-surface border border-zinc-800 rounded-2xl p-8 sm:p-10 text-center">
+              <svg class="w-10 h-10 text-brand-accent mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z"/>
+              </svg>
+              <p class="text-brand-text text-lg leading-relaxed mb-6">
+                "The motion graphics reel GRAFINEX produced for our product launch was stunning. It captured the energy and innovation of our brand perfectly. We've received countless compliments and our social engagement tripled."
+              </p>
+              <div>
+                <p class="text-white font-bold">Amina Patel</p>
+                <p class="text-brand-muted text-sm">Creative Lead, Orbit Media</p>
+              </div>
+            </blockquote>
+          </div>
+
+        </div>
+
+        <!-- Carousel Dots -->
+        <div class="flex justify-center gap-3 mt-6">
+          <button class="carousel-dot w-3 h-3 rounded-full bg-purple-500 transition-colors" aria-label="Go to slide 1"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-zinc-600 transition-colors" aria-label="Go to slide 2"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-zinc-600 transition-colors" aria-label="Go to slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. CONTACT SECTION
+       ============================================ -->
+  <section id="contact" class="py-20 lg:py-28 bg-brand-bg">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-in-section text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+          Let's create something <span class="text-brand-accent">great</span> together.
+        </h2>
+        <p class="text-brand-muted mt-3">Have a project in mind? Let's talk.</p>
+      </div>
+
+      <div class="fade-in-section bg-brand-surface border border-zinc-800 rounded-2xl p-8 sm:p-12">
+        <form id="contact-form" novalidate>
+          <div class="grid sm:grid-cols-2 gap-6 mb-6">
+            <!-- Name -->
+            <div>
+              <label for="form-name" class="block text-sm font-medium text-brand-muted mb-2">Name</label>
+              <input
+                type="text"
+                id="form-name"
+                class="w-full bg-brand-bg border border-zinc-700 rounded-lg px-4 py-3 text-brand-text placeholder-zinc-600 focus:outline-none focus:border-brand-accent transition-colors"
+                placeholder="Your name"
+              />
+              <span id="name-error" class="error-message"></span>
+            </div>
+            <!-- Email -->
+            <div>
+              <label for="form-email" class="block text-sm font-medium text-brand-muted mb-2">Email</label>
+              <input
+                type="email"
+                id="form-email"
+                class="w-full bg-brand-bg border border-zinc-700 rounded-lg px-4 py-3 text-brand-text placeholder-zinc-600 focus:outline-none focus:border-brand-accent transition-colors"
+                placeholder="you@example.com"
+              />
+              <span id="email-error" class="error-message"></span>
+            </div>
+          </div>
+
+          <!-- Project Type -->
+          <div class="mb-6">
+            <label for="form-project" class="block text-sm font-medium text-brand-muted mb-2">Project Type</label>
+            <select
+              id="form-project"
+              class="w-full bg-brand-bg border border-zinc-700 rounded-lg px-4 py-3 text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+            >
+              <option value="">Select a project type</option>
+              <option value="branding">Brand Identity &amp; Logo</option>
+              <option value="uiux">UI/UX Design</option>
+              <option value="social">Social Media Graphics</option>
+              <option value="print">Print &amp; Publication</option>
+              <option value="motion">Motion Graphics</option>
+              <option value="illustration">Illustration</option>
+              <option value="other">Other</option>
+            </select>
+            <span id="project-error" class="error-message"></span>
+          </div>
+
+          <!-- Message -->
+          <div class="mb-6">
+            <label for="form-message" class="block text-sm font-medium text-brand-muted mb-2">Message</label>
+            <textarea
+              id="form-message"
+              rows="5"
+              class="w-full bg-brand-bg border border-zinc-700 rounded-lg px-4 py-3 text-brand-text placeholder-zinc-600 focus:outline-none focus:border-brand-accent transition-colors resize-none"
+              placeholder="Tell me about your project..."
+            ></textarea>
+            <span id="message-error" class="error-message"></span>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="w-full sm:w-auto bg-brand-accent hover:bg-purple-600 text-white font-semibold px-10 py-3 rounded-full transition-colors"
+          >
+            Send Message
+          </button>
+
+          <!-- Success Message -->
+          <div id="form-success" class="hidden mt-6 bg-green-900/30 border border-green-700 text-green-400 rounded-lg px-6 py-4 text-center">
+            Thanks! I'll be in touch soon. ✦
+          </div>
+        </form>
+
+        <!-- Social Links & Email -->
+        <div class="mt-10 pt-8 border-t border-zinc-800">
+          <p class="text-brand-muted text-sm text-center mb-4">Or reach me directly:</p>
+          <p class="text-center mb-6">
+            <a href="mailto:hello@grafinex.design" class="text-brand-accent hover:underline font-medium">hello@grafinex.design</a>
+          </p>
+          <div class="flex justify-center gap-5">
+            <!-- Behance -->
+            <a href="#" class="text-brand-muted hover:text-brand-accent transition-colors" aria-label="Behance">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="text-brand-muted hover:text-brand-accent transition-colors" aria-label="LinkedIn">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="text-brand-muted hover:text-brand-accent transition-colors" aria-label="Instagram">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+            <!-- Twitter/X -->
+            <a href="#" class="text-brand-muted hover:text-brand-accent transition-colors" aria-label="Twitter / X">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       7. FOOTER
+       ============================================ -->
+  <footer class="py-8 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-brand-muted text-sm">
+        &copy; 2025 <span class="text-white font-semibold">GRAFINEX</span>. Crafted with passion.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       BACK-TO-TOP BUTTON
+       ============================================ -->
+  <button
+    id="back-to-top"
+    class="back-to-top fixed bottom-8 right-8 w-12 h-12 bg-brand-accent hover:bg-purple-600 text-white rounded-full shadow-lg flex items-center justify-center z-50 transition-colors"
+    aria-label="Back to top"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

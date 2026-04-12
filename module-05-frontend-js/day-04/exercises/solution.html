@@ -1,0 +1,213 @@
+<!-- ============================================
+  ✅ Day 04 Solution — Events & Interactivity
+  Module 05: Frontend JavaScript
+  Get Techy with Lucky
+============================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 04 — Events Solution</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1 { margin-bottom: 1rem; }
+    section { margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    section h2 { margin-bottom: 1rem; }
+    button { padding: 0.5rem 1rem; cursor: pointer; border: none; border-radius: 4px; background: #3498db; color: white; font-size: 1rem; }
+    button:hover { background: #2980b9; }
+    input, textarea { padding: 0.5rem; font-size: 1rem; border: 1px solid #ddd; border-radius: 4px; width: 100%; margin-bottom: 0.5rem; }
+    .counter-display { font-size: 2rem; font-weight: bold; margin: 1rem 0; }
+    .dark-mode { background: #1a1a2e; color: #e0e0e0; }
+    .dark-mode section { background: #16213e; }
+    .char-info { color: #666; font-size: 0.9rem; }
+    .error { color: #e74c3c; font-size: 0.9rem; margin-top: 0.25rem; }
+    .success { color: #27ae60; font-size: 0.9rem; margin-top: 0.25rem; }
+    ul { list-style: none; margin-top: 1rem; }
+    ul li { padding: 0.5rem; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+    .completed .todo-text { text-decoration: line-through; color: #999; }
+    .delete-btn { background: #e74c3c; padding: 0.25rem 0.5rem; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Events & Interactivity</h1>
+
+  <!-- TASK 1: Click Counter -->
+  <section>
+    <h2>Task 1: Click Counter</h2>
+    <div class="counter-display" id="counter">0</div>
+    <button id="increment-btn">Click Me!</button>
+  </section>
+
+  <!-- TASK 2: Dark Mode Toggle -->
+  <section>
+    <h2>Task 2: Dark Mode Toggle</h2>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+  </section>
+
+  <!-- TASK 3: Character Counter -->
+  <section>
+    <h2>Task 3: Character Counter</h2>
+    <textarea id="message" maxlength="200" placeholder="Type your message..."></textarea>
+    <p class="char-info"><span id="char-count">0</span> / 200 characters</p>
+  </section>
+
+  <!-- TASK 4: Form Validation -->
+  <section>
+    <h2>Task 4: Form Validation</h2>
+    <form id="signup-form">
+      <input type="text" id="name" placeholder="Full Name">
+      <div id="name-error" class="error"></div>
+
+      <input type="email" id="email" placeholder="Email Address">
+      <div id="email-error" class="error"></div>
+
+      <input type="password" id="password" placeholder="Password (min 8 characters)">
+      <div id="password-error" class="error"></div>
+
+      <button type="submit">Sign Up</button>
+      <div id="form-success" class="success"></div>
+    </form>
+  </section>
+
+  <!-- TASK 5: Interactive To-Do List -->
+  <section>
+    <h2>Task 5: Interactive To-Do List</h2>
+    <input type="text" id="todo-input" placeholder="Add a task and press Enter...">
+    <ul id="todo-list"></ul>
+  </section>
+
+  <script>
+    // ============================================
+    // TASK 1: Click Counter
+    // ============================================
+
+    let count = 0;
+    const counterDisplay = document.querySelector("#counter");
+    const incrementBtn = document.querySelector("#increment-btn");
+
+    incrementBtn.addEventListener("click", () => {
+      count++;
+      counterDisplay.textContent = count;
+    });
+
+
+    // ============================================
+    // TASK 2: Dark Mode Toggle
+    // ============================================
+
+    const themeToggle = document.querySelector("#theme-toggle");
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+
+    // ============================================
+    // TASK 3: Character Counter
+    // ============================================
+
+    const textarea = document.querySelector("#message");
+    const charCount = document.querySelector("#char-count");
+
+    textarea.addEventListener("input", () => {
+      charCount.textContent = textarea.value.length;
+    });
+
+
+    // ============================================
+    // TASK 4: Form Validation
+    // ============================================
+
+    const form = document.querySelector("#signup-form");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      // Clear previous messages
+      document.querySelector("#name-error").textContent = "";
+      document.querySelector("#email-error").textContent = "";
+      document.querySelector("#password-error").textContent = "";
+      document.querySelector("#form-success").textContent = "";
+
+      const name = document.querySelector("#name").value.trim();
+      const email = document.querySelector("#email").value.trim();
+      const password = document.querySelector("#password").value;
+
+      let isValid = true;
+
+      if (name === "") {
+        document.querySelector("#name-error").textContent = "Name is required.";
+        isValid = false;
+      }
+
+      if (!email.includes("@")) {
+        document.querySelector("#email-error").textContent = "Please enter a valid email address.";
+        isValid = false;
+      }
+
+      if (password.length < 8) {
+        document.querySelector("#password-error").textContent = "Password must be at least 8 characters.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        document.querySelector("#form-success").textContent = "Sign up successful! Welcome, " + name + "!";
+        form.reset();
+      }
+    });
+
+
+    // ============================================
+    // TASK 5: Interactive To-Do List
+    // ============================================
+
+    const todoInput = document.querySelector("#todo-input");
+    const todoList = document.querySelector("#todo-list");
+
+    // Add item on Enter
+    todoInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const text = todoInput.value.trim();
+        if (text === "") return;
+
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.classList.add("todo-text");
+        span.textContent = text;
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.textContent = "Delete";
+
+        li.appendChild(span);
+        li.appendChild(deleteBtn);
+        todoList.appendChild(li);
+
+        todoInput.value = "";
+      }
+    });
+
+    // Toggle completed & delete (event delegation)
+    todoList.addEventListener("click", (event) => {
+      if (event.target.classList.contains("todo-text")) {
+        event.target.parentElement.classList.toggle("completed");
+      }
+
+      if (event.target.classList.contains("delete-btn")) {
+        event.target.parentElement.remove();
+      }
+    });
+  </script>
+</body>
+</html>

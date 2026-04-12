@@ -1,0 +1,102 @@
+<!-- ============================================
+  🚀 Day 03 Exercise — DOM Manipulation
+  Module 05: Frontend JavaScript
+  Get Techy with Lucky
+============================================ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 03 — DOM Manipulation Exercise</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f5f5f5; }
+    h1 { margin-bottom: 1rem; }
+    p { margin-bottom: 0.5rem; }
+    .highlight { background-color: #ffd700; padding: 0.25rem 0.5rem; border-radius: 4px; }
+    ul { list-style: inside; margin: 1rem 0; }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 1rem 0;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">My DOM Playground</h1>
+
+  <p class="intro">This is the first paragraph.</p>
+  <p class="content">This is the second paragraph.</p>
+  <p class="content">This is the third paragraph.</p>
+
+  <ul id="language-list">
+    <!-- Languages will be added here by JavaScript -->
+  </ul>
+
+  <button id="toggle-btn">Toggle Highlight</button>
+
+  <div id="card-container">
+    <!-- A card will be created here by JavaScript -->
+  </div>
+
+  <script>
+    // ============================================
+    // TASK 1: Select and Log
+    // ============================================
+    // 1a. Select the heading by ID and log its text content
+    // Your code here
+
+    // 1b. Select ALL paragraphs and log how many there are
+    // Your code here
+
+
+    // ============================================
+    // TASK 2: Change Content and Style
+    // ============================================
+    // 2a. Change the heading text to "Welcome to JavaScript DOM!"
+    // Your code here
+
+    // 2b. Change the first paragraph's content to something new
+    // Your code here
+
+    // 2c. Change the second paragraph's colour to blue
+    // Your code here
+
+
+    // ============================================
+    // TASK 3: Toggle a Class
+    // ============================================
+    // When the button is clicked, toggle the "highlight"
+    // class on the heading (h1)
+    // Hint: use addEventListener("click", ...)
+    // Your code here
+
+
+    // ============================================
+    // TASK 4: Build a List Dynamically
+    // ============================================
+    // Create an array of 5 programming languages
+    // Loop through the array and create <li> elements
+    // Append each <li> to the <ul id="language-list">
+    // Your code here
+
+
+    // ============================================
+    // TASK 5: Create a Card with JavaScript
+    // ============================================
+    // Using ONLY JavaScript (no new HTML), create:
+    // - A <div> with class "card"
+    // - An <h3> inside it with your name
+    // - A <p> inside it with a short bio
+    // Append the card to #card-container
+    // Your code here
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; }
+
+    /* TASK 1: Mobile-first navigation
+       - .nav-links: hidden on mobile (display: none)
+       - .hamburger: visible on mobile
+       - At 768px+: show nav-links (display: flex), hide hamburger
+    */
+
+    /* TASK 2: Responsive hero section
+       - Full-width, gradient background, centred text
+       - Heading: use clamp() for fluid font size
+       - Padding: smaller on mobile, larger on desktop
+    */
+
+    /* TASK 3: About section
+       - Mobile: image and text stacked (column)
+       - Desktop (768px+): image and text side by side (row)
+    */
+
+    /* TASK 4: Projects grid
+       - Use repeat(auto-fit, minmax(280px, 1fr))
+       - This is responsive WITHOUT media queries!
+    */
+
+    /* TASK 5: Contact form
+       - Mobile: full width
+       - Desktop: max-width 600px, centred
+    */
+
+    /* TASK 6: Footer
+       - Mobile: stacked columns
+       - Desktop (768px+): 3 columns side by side using flexbox
+    */
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <button class="hamburger">☰</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Hi, I'm a Developer</h1>
+    <p>I build websites that look great on every device</p>
+    <a href="#projects" class="cta-button">View My Work</a>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <img src="https://via.placeholder.com/300x300" alt="Profile photo">
+      <div>
+        <h2>About Me</h2>
+        <p>Write 2-3 paragraphs about yourself here...</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Add 4-6 project cards -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- 3 columns: About, Links, Contact -->
+  </footer>
+
+</body>
+</html>
