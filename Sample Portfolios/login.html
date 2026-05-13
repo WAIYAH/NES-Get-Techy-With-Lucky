@@ -1,0 +1,81 @@
+// This is a Simple Login Form
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A simple login page for users to access their accounts."> 
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Login Page</h1>
+    <form id="loginform" action="login.php" method="POST">
+    <!-- The form will send a POST request to login.php when submitted -->
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <!-- The email input field is required and must be in a valid email format -->
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <!-- The password input field is required and will hide the characters as they are typed -->
+
+        <input type="submit" value="Login">
+        <a href="register.html">Don't have an account? Register here.</a>
+        <a href="forgot-password.html">Forgot your password?</a>
+        <!-- The submit button will submit the form, and there are links to the registration page and forgot password page -->
+    </form>
+</body>
+</html>
